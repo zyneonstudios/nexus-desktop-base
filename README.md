@@ -10,10 +10,10 @@ Maven Repository:
 </repository>
 ```
 
-´´´
+```
 <dependency>
   <groupId>com.zyneonstudios.nexus</groupId>
   <artifactId>base-desktop</artifactId>
   <version>2024.8-alpha.1</version>
 </dependency>
-´´´
+```

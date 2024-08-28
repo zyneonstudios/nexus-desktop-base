@@ -1,12 +1,13 @@
 # nexus-desktop-base
 Java library for desktop apps
 
-Maven Repository:
+---
+Integrate via Maven:
 ```
 <repository>
-  <id>zyneonstudios-repo</id>
+  <id>zyneonstudios-repo-releases</id>
   <name>Zyneon Studios Maven repository</name>
-  <url>https://maven.zyneonstudios.com/<repository></url>
+  <url>https://maven.zyneonstudios.com/releases</url>
 </repository>
 ```
 
@@ -16,4 +17,42 @@ Maven Repository:
   <artifactId>base-desktop</artifactId>
   <version>2024.8-alpha.1</version>
 </dependency>
+```
+
+---
+Integrate via Gradle Kotlin:
+```
+maven {
+    name = "zyneonstudiosRepoReleases"
+    url = uri("https://maven.zyneonstudios.com/releases")
+}
+```
+
+```
+implementation("com.zyneonstudios.nexus:base-desktop:2024.8-alpha.1")
+```
+
+---
+Integrate via Gradle Groovy:
+```
+maven {
+    name "zyneonstudiosRepoReleases"
+    url "https://maven.zyneonstudios.com/releases"
+}
+```
+
+```
+implementation "com.zyneonstudios.nexus:base-desktop:2024.8-alpha.1"
+```
+
+---
+Integrate via SBT:
+```
+resolvers +=
+  "zyneonstudios-repo-releases"
+     at "https://maven.zyneonstudios.com/releases"
+```
+
+```
+"com.zyneonstudios.nexus" %% "base-desktop" %% "2024.8-alpha.1"
 ```

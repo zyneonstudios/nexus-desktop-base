@@ -34,5 +34,17 @@ public class NexusWebFrame extends NexusFrame {
         pack();
     }
 
+    public CefBrowser getBrowser() {
+        return browser;
+    }
 
+    public boolean isBrowserFocussed() {
+        return browserFocus;
+    }
+
+    public void executeJavaScript(String... scripts) {
+        for (String script : scripts) {
+            browser.executeJavaScript(script, browser.getURL(), 0);
+        }
+    }
 }

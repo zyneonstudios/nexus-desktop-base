@@ -7,6 +7,7 @@ import com.zyneonstudios.nexus.desktop.frame.web.NexusWebSetup;
 import com.zyneonstudios.nexus.desktop.logger.NexusLogger;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class NexusDesktop {
 
@@ -20,6 +21,7 @@ public class NexusDesktop {
         setup.setup();
 
         NexusWebFrame frame1 = new NexusWebFrame(setup.getWebClient(),"https://www.google.com");
+        frame1.setTitleColors(Color.black, Color.green);
         NexusWebFrame frame2 = new NexusWebFrame(setup.getWebClient(),"https://drive.zyneonstudios.com");
 
         frame1.setVisible(true);

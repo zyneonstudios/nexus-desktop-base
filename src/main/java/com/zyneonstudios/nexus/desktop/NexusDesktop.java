@@ -20,9 +20,9 @@ public class NexusDesktop {
         setup.enableCache(true);
         setup.setup();
 
-        NexusWebFrame frame1 = new NexusWebFrame(setup.getWebClient(),"https://www.google.com");
+        NexusWebFrame frame1 = new NexusWebFrame(setup.getWebClient(),"https://www.google.com",true);
         frame1.setTitleColors(Color.black, Color.green);
-        NexusWebFrame frame2 = new NexusWebFrame(setup.getWebClient(),"https://drive.zyneonstudios.com");
+        NexusWebFrame frame2 = new NexusWebFrame(setup.getWebClient(),"https://drive.zyneonstudios.com",true);
 
         frame1.setVisible(true);
         frame2.setVisible(true);

@@ -12,7 +12,7 @@ public class NexusWebFrame extends NexusFrame {
     private final CefBrowser browser;
     private boolean browserFocus;
 
-    public NexusWebFrame(CefClient webClient, String url) {
+    public NexusWebFrame(CefClient webClient, String url, boolean titlebar) {
         super();
         setTitle("New NEXUS Web Frame");
         browser = webClient.createBrowser(url, false, false);
@@ -31,6 +31,9 @@ public class NexusWebFrame extends NexusFrame {
             }
         });
         getContentPane().add(browser.getUIComponent(),BorderLayout.CENTER);
+        if(!titlebar) {
+            setUndecorated(true);
+        }
         pack();
     }
 

@@ -1,4 +1,4 @@
-# Nexus Desktop `2024.9-alpha.5`
+# Nexus Desktop `2024.9-alpha.8`
 
 ### Java 21 library designed to simplify the development of Java Desktop apps.<br>Based on [Nexus Utilities](https://github.com/zyneonstudios/nexus-utilities)
 

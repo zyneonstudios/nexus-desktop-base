@@ -4,7 +4,7 @@
 
 ---
 
-[![Javadoc](https://img.shields.io/badge/JavaDoc-Online-green)](https://zyneonstudios.github.io/nexus-desktop/apidocs/)
+[![Javadoc](https://img.shields.io/badge/JavaDoc-Online-green)](https://zyneonstudios.github.io/nexus-desktop-base/apidocs/)
 
 ---
 

@@ -10,18 +10,18 @@
 
 ### Contents
 - Everything from [Nexus Utilities Contents](https://github.com/zyneonstudios/nexus-utilities#contents)
-- NexusDesktop: Default initialization class
-- Frame
-  - Web
-    - NexusWebFrame: Chromium frame with optimized settings
-    - NexusWebSetup: Setup for JCEF
-  - NexusFrame: Base frame
+- [NexusDesktop: Default initialization class](https://zyneonstudios.github.io/nexus-desktop-base/apidocs/com/zyneonstudios/nexus/desktop/NexusDesktop)
+- [Frame](https://zyneonstudios.github.io/nexus-desktop-base/apidocs/com/zyneonstudios/nexus/desktop/frame/package-summary)
+  - [NexusFrame: Base frame](https://zyneonstudios.github.io/nexus-desktop-base/apidocs/com/zyneonstudios/nexus/desktop/frame/NexusFrame)
+  - [Web](https://zyneonstudios.github.io/nexus-desktop-base/apidocs/com/zyneonstudios/nexus/desktop/frame/web/package-summary)
+    - [NexusWebFrame: Chromium frame with optimized settings](https://zyneonstudios.github.io/nexus-desktop-base/apidocs/com/zyneonstudios/nexus/desktop/frame/web/NexusWebFrame)
+    - [NexusWebSetup: Setup for JCEF](https://zyneonstudios.github.io/nexus-desktop-base/apidocs/com/zyneonstudios/nexus/desktop/frame/web/NexusWebSetup)
 
 ---
 
 ### Implementation
 
-You can implement this library via [Maven](#implement-via-maven), [Gradle (Groovy)](#implement-via-gradle-groovy),  [Gradle (Kotlin)](#implement-via-gradle-kotlin), [SBT](#implement-via-sbt) and [local library](https://github.com/zyneonstudios/nexus-desktop/releases/latest/)
+You can implement this library via [Maven](#implement-via-maven), [Gradle (Groovy)](#implement-via-gradle-groovy),  [Gradle (Kotlin)](#implement-via-gradle-kotlin), [SBT](#implement-via-sbt) and as local library
 
 #### Implement via Maven
 ```

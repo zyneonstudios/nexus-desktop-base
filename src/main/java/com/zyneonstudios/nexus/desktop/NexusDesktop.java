@@ -1,35 +1,14 @@
 package com.zyneonstudios.nexus.desktop;
 
 import com.formdev.flatlaf.FlatDarkLaf;
-import com.zyneonstudios.nexus.desktop.frame.NexusFrame;
-import com.zyneonstudios.nexus.desktop.frame.web.NexusWebFrame;
-import com.zyneonstudios.nexus.desktop.frame.web.NexusWebSetup;
-import com.zyneonstudios.nexus.desktop.logger.NexusLogger;
+import com.zyneonstudios.nexus.utilities.NexusUtilities;
+import com.zyneonstudios.nexus.utilities.logger.NexusLogger;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class NexusDesktop {
 
-    private final static NexusLogger logger = new NexusLogger("BASE");
-
-    public static void main(String[] args) {
-        NexusDesktop.init();
-        NexusWebSetup setup = new NexusWebSetup("jcef/");
-        setup.enableCookies(true);
-        setup.enableCache(true);
-        setup.setup();
-
-        NexusWebFrame frame1 = new NexusWebFrame(setup.getWebClient(),"https://www.google.com",true);
-        frame1.setTitleColors(Color.black, Color.green);
-        NexusWebFrame frame2 = new NexusWebFrame(setup.getWebClient(),"https://drive.zyneonstudios.com",true);
-
-        frame1.setVisible(true);
-        frame2.setVisible(true);
-
-        NexusFrame frame = new NexusFrame();
-        frame.setVisible(true);
-    }
+    private static final NexusLogger logger = NexusUtilities.getLogger();
 
     public static boolean init() {
         logger.dbg("Initializing...");
@@ -43,5 +22,9 @@ public class NexusDesktop {
             logger.err(e.getMessage());
             return false;
         }
+    }
+
+    public static NexusLogger getLogger() {
+        return logger;
     }
 }

@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.zyneonstudios.nexus.desktop","l":"NexusDesktop"},{"p":"com.zyneonstudios.nexus.desktop.frame","l":"NexusFrame"},{"p":"com.zyneonstudios.nexus.desktop.frame.web","l":"NexusWebFrame"},{"p":"com.zyneonstudios.nexus.desktop.frame.web","l":"NexusWebSetup"}];updateSearchResults();

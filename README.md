@@ -1,10 +1,12 @@
-# Nexus Desktop `2024.9-alpha.8`
+# Nexus Desktop `2024.9`
 
 ### Java 21 library designed to simplify the development of Java Desktop apps.<br>Based on [Nexus Utilities](https://github.com/zyneonstudios/nexus-utilities)
 
 ---
 
 [![Javadoc](https://img.shields.io/badge/JavaDoc-Online-green)](https://zyneonstudios.github.io/nexus-desktop-base/apidocs/)
+[![Documentation](https://img.shields.io/badge/Nexus-Docs/Wiki-blue)](https://zyneonstudios.github.io/nexus-desktop-base/apidocs/)
+
 
 ---
 

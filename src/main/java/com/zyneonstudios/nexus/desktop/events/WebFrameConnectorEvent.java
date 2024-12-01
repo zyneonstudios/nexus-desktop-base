@@ -9,7 +9,7 @@ public abstract class WebFrameConnectorEvent implements Event{
     private final UUID uuid = UUID.randomUUID();
     private final NexusWebFrame frame;
 
-    private WebFrameConnectorEvent(NexusWebFrame frame) {
+    public WebFrameConnectorEvent(NexusWebFrame frame) {
         this.frame = frame;
     }
 

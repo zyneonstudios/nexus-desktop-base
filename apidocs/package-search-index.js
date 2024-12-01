@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.zyneonstudios.nexus.desktop"},{"l":"com.zyneonstudios.nexus.desktop.frame"},{"l":"com.zyneonstudios.nexus.desktop.frame.web"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.zyneonstudios.nexus.desktop"},{"l":"com.zyneonstudios.nexus.desktop.events"},{"l":"com.zyneonstudios.nexus.desktop.frame"},{"l":"com.zyneonstudios.nexus.desktop.frame.web"}];updateSearchResults();

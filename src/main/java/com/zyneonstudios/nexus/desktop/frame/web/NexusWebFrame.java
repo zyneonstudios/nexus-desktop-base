@@ -41,7 +41,7 @@ public class NexusWebFrame extends NexusFrame {
             @Override
             public boolean onConsoleMessage(CefBrowser browser, CefSettings.LogSeverity level, String message, String source, int line) {
                 if (message.startsWith("[CONNECTOR] async.")) {
-                    String request = message.replace("[CONNECTOR] ", "");
+                    String request = message.replace("[CONNECTOR] async.", "");
                     if(asyncWebFrameConnectorEvent!=null) {
                         asyncWebFrameConnectorEvent.resolveMessage(request);
                     } else if(webFrameConnectorEvent!=null) {

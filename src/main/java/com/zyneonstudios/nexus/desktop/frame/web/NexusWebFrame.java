@@ -73,6 +73,22 @@ public class NexusWebFrame extends NexusFrame {
         pack();
     }
 
+    public AsyncWebFrameConnectorEvent getAsyncWebFrameConnectorEvent() {
+        return asyncWebFrameConnectorEvent;
+    }
+
+    public WebFrameConnectorEvent getWebFrameConnectorEvent() {
+        return webFrameConnectorEvent;
+    }
+
+    public void setAsyncWebFrameConnectorEvent(AsyncWebFrameConnectorEvent asyncWebFrameConnectorEvent) {
+        this.asyncWebFrameConnectorEvent = asyncWebFrameConnectorEvent;
+    }
+
+    public void setWebFrameConnectorEvent(WebFrameConnectorEvent webFrameConnectorEvent) {
+        this.webFrameConnectorEvent = webFrameConnectorEvent;
+    }
+
     public CefBrowser getBrowser() {
         return browser;
     }

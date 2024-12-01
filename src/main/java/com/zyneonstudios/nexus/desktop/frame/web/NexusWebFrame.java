@@ -43,7 +43,7 @@ public class NexusWebFrame extends NexusFrame {
                 if (message.startsWith("[CONNECTOR] async.")) {
                     String request = message.replace("[CONNECTOR] async.", "");
                     if(asyncWebFrameConnectorEvent!=null) {
-                        asyncWebFrameConnectorEvent.resolveMessage(request);
+                        asyncWebFrameConnectorEvent.resolveAsync(request);
                     } else if(webFrameConnectorEvent!=null) {
                         webFrameConnectorEvent.resolveMessage(request);
                     }
@@ -52,7 +52,7 @@ public class NexusWebFrame extends NexusFrame {
                     if(webFrameConnectorEvent!=null) {
                         webFrameConnectorEvent.resolveMessage(request);
                     } else if(asyncWebFrameConnectorEvent!=null) {
-                        asyncWebFrameConnectorEvent.resolveMessage(request);
+                        asyncWebFrameConnectorEvent.resolveAsync(request);
                     }
                 } else if (message.startsWith("[LOG] ")) {
                     NexusDesktop.getLogger().log(message.replace("[LOG] ","[FRAME] "));

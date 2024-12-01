@@ -23,6 +23,10 @@ public abstract class AsyncWebFrameConnectorEvent implements Event{
         return frame;
     }
 
+    public final void resolveAsync(String message) {
+        CompletableFuture.runAsync(() -> {resolveMessage(message);});
+    }
+
     public void resolveMessage(String message) {
         CompletableFuture.runAsync(() -> {});
     };

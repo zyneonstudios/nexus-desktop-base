@@ -1,8 +1,13 @@
 package com.zyneonstudios.nexus.desktop.frame.web;
 
+import com.zyneonstudios.nexus.desktop.NexusDesktop;
+import com.zyneonstudios.nexus.desktop.events.AsyncWebFrameConnectorEvent;
+import com.zyneonstudios.nexus.desktop.events.WebFrameConnectorEvent;
 import com.zyneonstudios.nexus.desktop.frame.NexusFrame;
 import org.cef.CefClient;
+import org.cef.CefSettings;
 import org.cef.browser.CefBrowser;
+import org.cef.handler.CefDisplayHandlerAdapter;
 import org.cef.handler.CefFocusHandlerAdapter;
 
 import java.awt.*;
@@ -11,6 +16,8 @@ public class NexusWebFrame extends NexusFrame {
 
     private final CefBrowser browser;
     private boolean browserFocus;
+    private AsyncWebFrameConnectorEvent asyncWebFrameConnectorEvent;
+    private WebFrameConnectorEvent webFrameConnectorEvent;
 
     public NexusWebFrame(CefClient webClient, String url, boolean titlebar) {
         super();
@@ -28,6 +35,35 @@ public class NexusWebFrame extends NexusFrame {
                 browserFocus = true;
                 KeyboardFocusManager.getCurrentKeyboardFocusManager().clearGlobalFocusOwner();
                 browser.setFocus(true);
+            }
+        });
+        webClient.addDisplayHandler(new CefDisplayHandlerAdapter() {
+            @Override
+            public boolean onConsoleMessage(CefBrowser browser, CefSettings.LogSeverity level, String message, String source, int line) {
+                if (message.startsWith("[CONNECTOR] async.")) {
+                    String request = message.replace("[CONNECTOR] ", "");
+                    if(asyncWebFrameConnectorEvent!=null) {
+                        asyncWebFrameConnectorEvent.resolveMessage(request);
+                    } else if(webFrameConnectorEvent!=null) {
+                        webFrameConnectorEvent.resolveMessage(request);
+                    }
+                } else if (message.startsWith("[CONNECTOR] ")) {
+                    String request = message.replace("[CONNECTOR] ", "");
+                    if(webFrameConnectorEvent!=null) {
+                        webFrameConnectorEvent.resolveMessage(request);
+                    } else if(asyncWebFrameConnectorEvent!=null) {
+                        asyncWebFrameConnectorEvent.resolveMessage(request);
+                    }
+                } else if (message.startsWith("[LOG] ")) {
+                    NexusDesktop.getLogger().log(message.replace("[LOG] ","[FRAME] "));
+                } else if (message.startsWith("[ERR] ")) {
+                    NexusDesktop.getLogger().err(message.replace("[ERR] ","[FRAME] "));
+                } else if (message.startsWith("[DEB] ")) {
+                    NexusDesktop.getLogger().dbg(message.replace("[DEB] ","[FRAME] "));
+                } else {
+                    NexusDesktop.getLogger().dbg("[FRAME] (Console) "+message);
+                }
+                return super.onConsoleMessage(browser, level, message, source, line);
             }
         });
         getContentPane().add(browser.getUIComponent(),BorderLayout.CENTER);

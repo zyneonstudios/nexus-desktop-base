@@ -6,7 +6,7 @@
 
     <groupId>com.zyneonstudios.nexus</groupId>
     <artifactId>base-desktop</artifactId>
-    <version>2024.12.5</version>
+    <version>2024.12.6-beta.1</version>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -43,7 +43,7 @@
         <dependency>
             <groupId>com.zyneonstudios.nexus</groupId>
             <artifactId>base-utilities</artifactId>
-            <version>2024.9.3</version>
+            <version>2024.12-beta.1</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
@@ -51,7 +51,7 @@
     <distributionManagement>
         <repository>
             <id>zyneonstudios-repo</id>
-            <url>https://maven.zyneonstudios.com/releases</url>
+            <url>https://maven.zyneonstudios.com/snapshots</url>
         </repository>
     </distributionManagement>
 

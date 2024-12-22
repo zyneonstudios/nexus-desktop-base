@@ -1,5 +1,6 @@
 package com.zyneonstudios.nexus.desktop.frame.web;
 
+import com.zyneonstudios.nexus.desktop.NexusDesktop;
 import me.friwi.jcefmaven.CefAppBuilder;
 import org.cef.CefApp;
 import org.cef.CefClient;
@@ -101,6 +102,7 @@ public class NexusWebSetup {
             });
             return true;
         } catch (Exception e) {
+            NexusDesktop.getLogger().err("Failed to finish the web setup: "+e.getMessage());
             return false;
         }
     }

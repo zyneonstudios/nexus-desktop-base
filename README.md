@@ -1,4 +1,4 @@
-# Nexus Desktop `2024.9`
+# Nexus Desktop `2024.12.6`
 
 ### Java 21 library designed to simplify the development of Java Desktop apps.<br>Based on [Nexus Utilities](https://github.com/zyneonstudios/nexus-utilities)
 
@@ -11,13 +11,9 @@
 ---
 
 ### Contents
-- Everything from [Nexus Utilities Contents](https://github.com/zyneonstudios/nexus-utilities#contents)
-- [NexusDesktop: Default initialization class](https://zyneonstudios.github.io/nexus-desktop-base/apidocs/com/zyneonstudios/nexus/desktop/NexusDesktop)
-- [Frame](https://zyneonstudios.github.io/nexus-desktop-base/apidocs/com/zyneonstudios/nexus/desktop/frame/package-summary)
-  - [NexusFrame: Base frame](https://zyneonstudios.github.io/nexus-desktop-base/apidocs/com/zyneonstudios/nexus/desktop/frame/NexusFrame)
-  - [Web](https://zyneonstudios.github.io/nexus-desktop-base/apidocs/com/zyneonstudios/nexus/desktop/frame/web/package-summary)
-    - [NexusWebFrame: Chromium frame with optimized settings](https://zyneonstudios.github.io/nexus-desktop-base/apidocs/com/zyneonstudios/nexus/desktop/frame/web/NexusWebFrame)
-    - [NexusWebSetup: Setup for JCEF](https://zyneonstudios.github.io/nexus-desktop-base/apidocs/com/zyneonstudios/nexus/desktop/frame/web/NexusWebSetup)
+See Javadocs:
+- [NexusUtilities](https://zyneonstudios.github.io/nexus-utilities/apidocs/)
+- [NexusDesktop (this)](https://zyneonstudios.github.io/nexus-desktop-base/apidocs/)
 
 ---
 

@@ -1,6 +1,6 @@
 package com.zyneonstudios.nexus.desktop.events;
 
-import com.zyneonstudios.nexus.desktop.frame.web.NexusWebFrame;
+import com.zyneonstudios.nexus.desktop.frame.web.NWebFrame;
 import com.zyneonstudios.nexus.utilities.events.Event;
 
 import java.util.UUID;
@@ -9,10 +9,10 @@ import java.util.concurrent.CompletableFuture;
 public abstract class AsyncWebFrameConnectorEvent implements Event {
 
     private final UUID uuid = UUID.randomUUID();
-    private final NexusWebFrame frame;
+    private final NWebFrame frame;
     private String message;
 
-    public AsyncWebFrameConnectorEvent(NexusWebFrame frame, String message) {
+    public AsyncWebFrameConnectorEvent(NWebFrame frame, String message) {
         this.frame = frame;
         this.message = message;
     }
@@ -26,7 +26,7 @@ public abstract class AsyncWebFrameConnectorEvent implements Event {
     }
 
     @Override
-    public boolean execute() {
+    public final boolean execute() {
         CompletableFuture.runAsync(() -> {
             resolveMessage(message);
         });
@@ -38,7 +38,7 @@ public abstract class AsyncWebFrameConnectorEvent implements Event {
         return uuid;
     }
 
-    public NexusWebFrame getFrame() {
+    public NWebFrame getFrame() {
         return frame;
     }
 

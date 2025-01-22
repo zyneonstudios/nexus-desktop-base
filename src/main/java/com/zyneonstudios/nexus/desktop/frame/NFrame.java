@@ -9,25 +9,25 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class NexusFrame extends JFrame {
+public class NFrame extends JFrame {
 
-    public NexusFrame() {
+    public NFrame() {
         initialize();
         setTitle("New NEXUS Frame");
     }
 
-    public NexusFrame(String title) {
+    public NFrame(String title) {
         initialize();
         setTitle(title);
     }
 
-    public NexusFrame(boolean isVisible) {
+    public NFrame(boolean isVisible) {
         initialize();
         setTitle("New NEXUS Frame");
         setVisible(isVisible);
     }
 
-    public NexusFrame(String title, boolean isVisible) {
+    public NFrame(String title, boolean isVisible) {
         initialize();
         setTitle(title);
         setVisible(isVisible);

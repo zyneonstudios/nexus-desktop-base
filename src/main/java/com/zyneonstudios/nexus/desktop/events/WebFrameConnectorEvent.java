@@ -1,6 +1,6 @@
 package com.zyneonstudios.nexus.desktop.events;
 
-import com.zyneonstudios.nexus.desktop.frame.web.NexusWebFrame;
+import com.zyneonstudios.nexus.desktop.frame.web.NWebFrame;
 import com.zyneonstudios.nexus.utilities.events.Event;
 
 import java.util.UUID;
@@ -8,10 +8,10 @@ import java.util.UUID;
 public abstract class WebFrameConnectorEvent implements Event {
 
     private final UUID uuid = UUID.randomUUID();
-    private final NexusWebFrame frame;
+    private final NWebFrame frame;
     private String message;
 
-    public WebFrameConnectorEvent(NexusWebFrame frame, String message) {
+    public WebFrameConnectorEvent(NWebFrame frame, String message) {
         this.frame = frame;
         this.message = message;
     }
@@ -34,7 +34,7 @@ public abstract class WebFrameConnectorEvent implements Event {
         return uuid;
     }
 
-    public NexusWebFrame getFrame() {
+    public NWebFrame getFrame() {
         return frame;
     }
 

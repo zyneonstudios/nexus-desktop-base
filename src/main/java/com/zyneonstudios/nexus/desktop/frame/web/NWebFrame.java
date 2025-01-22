@@ -3,7 +3,7 @@ package com.zyneonstudios.nexus.desktop.frame.web;
 import com.zyneonstudios.nexus.desktop.NexusDesktop;
 import com.zyneonstudios.nexus.desktop.events.AsyncWebFrameConnectorEvent;
 import com.zyneonstudios.nexus.desktop.events.WebFrameConnectorEvent;
-import com.zyneonstudios.nexus.desktop.frame.NexusFrame;
+import com.zyneonstudios.nexus.desktop.frame.NFrame;
 import org.cef.CefClient;
 import org.cef.CefSettings;
 import org.cef.browser.CefBrowser;
@@ -12,14 +12,14 @@ import org.cef.handler.CefFocusHandlerAdapter;
 
 import java.awt.*;
 
-public class NexusWebFrame extends NexusFrame {
+public class NWebFrame extends NFrame {
 
     private final CefBrowser browser;
     private boolean browserFocus;
     private AsyncWebFrameConnectorEvent asyncWebFrameConnectorEvent;
     private WebFrameConnectorEvent webFrameConnectorEvent;
 
-    public NexusWebFrame(CefClient webClient, String url, boolean titlebar) {
+    public NWebFrame(CefClient webClient, String url, boolean titlebar) {
         super();
         setTitle("New NEXUS Web Frame");
         browser = webClient.createBrowser(url, false, false);

@@ -6,7 +6,7 @@
 
     <groupId>com.zyneonstudios.nexus</groupId>
     <artifactId>base-desktop</artifactId>
-    <version>2024.12.6</version>
+    <version>2025.1</version>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -73,7 +73,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.10.0</version>
+                <version>3.11.2</version>
                 <configuration>
                     <doclint>none</doclint> <docencoding>UTF-8</docencoding>
                     <outputDirectory>${project.build.directory}/site/apidocs</outputDirectory>

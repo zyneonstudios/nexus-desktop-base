@@ -1,8 +1,5 @@
 package com.zyneonstudios.nexus.desktop.frame.nexus;
 
-import com.zyneonstudios.nexus.desktop.NexusDesktop;
-import com.zyneonstudios.nexus.desktop.frame.web.NexusWebSetup;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -175,13 +172,7 @@ public class NexusFrame extends JFrame {
         super.setTitle(title);
     }
 
-    public static void main(String[] args) {
-        NexusDesktop.init();
-        NexusWebSetup setup = new NexusWebSetup("libs/jcef/");
-        setup.setup();
-        NexusWebFrame f = new NexusWebFrame(setup.getWebClient(),"https://google.com",false);
-        f.setVisible(true);
-        f.setTitle("Test");
-        f.setTitle("NEXUS CUSTOM FRAME");
+    public JFrame getAsJFrame() {
+        return this;
     }
 }

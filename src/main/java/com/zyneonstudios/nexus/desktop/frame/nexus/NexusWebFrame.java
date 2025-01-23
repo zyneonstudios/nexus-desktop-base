@@ -3,6 +3,7 @@ package com.zyneonstudios.nexus.desktop.frame.nexus;
 import com.zyneonstudios.nexus.desktop.NexusDesktop;
 import com.zyneonstudios.nexus.desktop.events.AsyncWebFrameConnectorEvent;
 import com.zyneonstudios.nexus.desktop.events.WebFrameConnectorEvent;
+import com.zyneonstudios.nexus.desktop.frame.web.WebFrame;
 import org.cef.CefClient;
 import org.cef.CefSettings;
 import org.cef.browser.CefBrowser;
@@ -11,7 +12,7 @@ import org.cef.handler.CefFocusHandlerAdapter;
 
 import java.awt.*;
 
-public class NexusWebFrame extends NexusFrame {
+public class NexusWebFrame extends NexusFrame implements WebFrame {
 
     private final CefBrowser browser;
     private boolean browserFocus;

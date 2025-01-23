@@ -70,4 +70,8 @@ public class NFrame extends JFrame {
         setTitle(title);
         setIconImages(icons);
     }
+
+    public JFrame getAsJFrame() {
+        return this;
+    }
 }

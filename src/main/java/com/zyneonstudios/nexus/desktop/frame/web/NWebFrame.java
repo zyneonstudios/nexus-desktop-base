@@ -12,7 +12,7 @@ import org.cef.handler.CefFocusHandlerAdapter;
 
 import java.awt.*;
 
-public class NWebFrame extends NFrame {
+public class NWebFrame extends NFrame implements WebFrame {
 
     private final CefBrowser browser;
     private boolean browserFocus;

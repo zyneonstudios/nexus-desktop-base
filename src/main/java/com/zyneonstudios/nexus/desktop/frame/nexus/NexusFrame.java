@@ -64,7 +64,7 @@ public class NexusFrame extends JFrame {
         //windowControls.add(maximize, BorderLayout.EAST);
 
         JPanel buttons = new JPanel(new BorderLayout());
-        buttons.setBackground(Color.black);
+        buttons.setBackground(null);
         buttons.add(windowControls, BorderLayout.WEST);
         buttons.add(close, BorderLayout.EAST);
 

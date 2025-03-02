@@ -6,7 +6,7 @@
 
     <groupId>com.zyneonstudios.nexus</groupId>
     <artifactId>base-desktop</artifactId>
-    <version>2025.1.5</version>
+    <version>2025.3</version>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -16,8 +16,14 @@
 
     <repositories>
         <repository>
-            <id>zyneonstudios-repo-releases</id>
-            <url>https://maven.zyneonstudios.com/releases</url>
+            <id>nerofy-releases</id>
+            <name>Nerofy Network Maven repository</name>
+            <url>https://maven.nrfy.net/releases</url>
+        </repository>
+        <repository>
+            <id>nerofy-snapshots</id>
+            <name>Nerofy Network Maven repository (snapshots)</name>
+            <url>https://maven.nrfy.net/snapshots</url>
         </repository>
     </repositories>
 

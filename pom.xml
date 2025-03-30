@@ -6,7 +6,7 @@
 
     <groupId>com.zyneonstudios.nexus</groupId>
     <artifactId>base-desktop</artifactId>
-    <version>2025.3</version>
+    <version>2025.3.1</version>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -20,24 +20,19 @@
             <name>Nerofy Network Maven repository</name>
             <url>https://maven.nrfy.net/releases</url>
         </repository>
-        <repository>
-            <id>nerofy-snapshots</id>
-            <name>Nerofy Network Maven repository (snapshots)</name>
-            <url>https://maven.nrfy.net/snapshots</url>
-        </repository>
     </repositories>
 
     <dependencies>
         <dependency>
             <groupId>com.formdev</groupId>
             <artifactId>flatlaf</artifactId>
-            <version>3.5.1</version>
+            <version>3.5.4</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>me.friwi</groupId>
             <artifactId>jcefmaven</artifactId>
-            <version>127.3.1</version>
+            <version>132.3.1</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -49,15 +44,16 @@
         <dependency>
             <groupId>com.zyneonstudios.nexus</groupId>
             <artifactId>base-utilities</artifactId>
-            <version>2024.12.1</version>
+            <version>2025.3</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
 
     <distributionManagement>
         <repository>
-            <id>zyneonstudios-repo</id>
-            <url>https://maven.zyneonstudios.com/snapshots</url>
+            <id>nerofy-releases</id>
+            <name>Nerofy Network Maven repository</name>
+            <url>https://maven.nrfy.net/releases</url>
         </repository>
     </distributionManagement>
 

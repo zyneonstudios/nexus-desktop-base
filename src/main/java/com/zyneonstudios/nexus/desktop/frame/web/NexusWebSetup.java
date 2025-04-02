@@ -18,6 +18,8 @@ import java.net.URI;
 
 public class NexusWebSetup {
 
+    private boolean setupFinished = false;
+
     private final CefAppBuilder builder = new CefAppBuilder();
     private final File libraryDirectory;
 
@@ -68,42 +70,50 @@ public class NexusWebSetup {
     }
 
     public boolean setup() {
-        try {
-            webApp = builder.build();
-            webClient = webApp.createClient();
-            webClient.addDownloadHandler(new CefDownloadHandlerAdapter() {
-                @Override
-                public boolean onBeforeDownload(CefBrowser browser, CefDownloadItem downloadItem, String suggestedName, CefBeforeDownloadCallback callback) {
-                    try {
-                        if (Desktop.isDesktopSupported()) {
-                            try {
-                                Desktop.getDesktop().browse(new URI(downloadItem.getURL()));
-                            } catch (Exception ignore) {
+        if(!setupFinished) {
+            setupFinished = true;
+            try {
+                webApp = builder.build();
+                webClient = webApp.createClient();
+                webClient.addDownloadHandler(new CefDownloadHandlerAdapter() {
+                    @Override
+                    public boolean onBeforeDownload(CefBrowser browser, CefDownloadItem downloadItem, String suggestedName, CefBeforeDownloadCallback callback) {
+                        try {
+                            if (Desktop.isDesktopSupported()) {
+                                try {
+                                    Desktop.getDesktop().browse(new URI(downloadItem.getURL()));
+                                } catch (Exception ignore) {
+                                }
                             }
+                        } catch (Exception ignore) {
                         }
-                    } catch (Exception ignore) {}
-                    return true;
-                }
-            });
-            webClient.addLifeSpanHandler(new CefLifeSpanHandlerAdapter() {
-                @Override
-                public boolean onBeforePopup(CefBrowser browser, CefFrame frame, String target_url, String target_frame_name) {
-                    try {
-                        if (Desktop.isDesktopSupported()) {
-                            Desktop.getDesktop().browse(new URI(target_url));
-                        } else {
+                        return true;
+                    }
+                });
+                webClient.addLifeSpanHandler(new CefLifeSpanHandlerAdapter() {
+                    @Override
+                    public boolean onBeforePopup(CefBrowser browser, CefFrame frame, String target_url, String target_frame_name) {
+                        try {
+                            if (Desktop.isDesktopSupported()) {
+                                Desktop.getDesktop().browse(new URI(target_url));
+                            } else {
+                                browser.loadURL(target_url);
+                            }
+                        } catch (Exception e) {
                             browser.loadURL(target_url);
                         }
-                    } catch (Exception e) {
-                        browser.loadURL(target_url);
+                        return true;
                     }
-                    return true;
-                }
-            });
-            return true;
-        } catch (Exception e) {
-            NexusDesktop.getLogger().err("Failed to finish the web setup: "+e.getMessage());
-            return false;
+                });
+                return true;
+            } catch (Exception e) {
+                NexusDesktop.getLogger().err("Failed to finish the web setup: " + e.getMessage());
+            }
         }
+        return false;
+    }
+
+    public boolean isSetupFinished() {
+        return setupFinished;
     }
 }

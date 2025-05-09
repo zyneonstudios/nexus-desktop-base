@@ -20,15 +20,25 @@ public class NexusFrame extends JFrame {
     JPanel mainPane = new JPanel();
 
     public NexusFrame() {
-        setUndecorated(true);
+        init(true);
+    }
+
+    public NexusFrame(boolean systemStyle) {
+        init(!systemStyle);
+    }
+
+    private void init(boolean customTitlebar) {
+        if(customTitlebar) {
+            setUndecorated(true);
+            new NexusResizer(this);
+            setupTitlebar();
+
+            getRootPane().setBorder(BorderFactory.createLineBorder(Color.GRAY, 1,true));
+        }
+
         Dimension defaultSize = new Dimension(1280, 720);
         setSize(defaultSize);
         setLocationRelativeTo(null);
-
-        new NexusResizer(this);
-        setupTitlebar();
-
-        getRootPane().setBorder(BorderFactory.createLineBorder(Color.GRAY, 1,true));
     }
 
     private void setupTitlebar() {

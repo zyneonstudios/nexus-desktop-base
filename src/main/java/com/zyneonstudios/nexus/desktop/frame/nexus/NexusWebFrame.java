@@ -19,8 +19,8 @@ public class NexusWebFrame extends NexusFrame implements WebFrame {
     private AsyncWebFrameConnectorEvent asyncWebFrameConnectorEvent;
     private WebFrameConnectorEvent webFrameConnectorEvent;
 
-    public NexusWebFrame(CefClient webClient, String url, boolean titlebar) {
-        super();
+    public NexusWebFrame(CefClient webClient, String url, boolean titlebar, boolean systemStyle) {
+        super(systemStyle);
         setTitle("New NEXUS Web Frame");
         browser = webClient.createBrowser(url, false, false);
         webClient.addFocusHandler(new CefFocusHandlerAdapter() {
@@ -74,7 +74,6 @@ public class NexusWebFrame extends NexusFrame implements WebFrame {
         if(!titlebar) {
             setUndecorated(true);
         }
-        pack();
     }
 
     public AsyncWebFrameConnectorEvent getAsyncWebFrameConnectorEvent() {
